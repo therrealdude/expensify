@@ -43,7 +43,7 @@ var Counter = function (_React$Component) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps, prevState) {
-      if (prevState.count !== this.state.count && !isNan(this.state.count)) {
+      if (prevState.count !== this.state.count && !isNaN(this.state.count)) {
         localStorage.setItem('count', this.state.count);
       }
     }
