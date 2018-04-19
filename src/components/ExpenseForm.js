@@ -9,7 +9,6 @@ console.log(now.format('MMM Do, YYYY'));
 export default class ExpenseForm extends React.Component {
   constructor(props){
     super(props);
-    console.log(props);
     this.state = {
       description: props.expense ? props.expense.description : '',
       note: props.expense ? props.expense.note : '',
@@ -76,6 +75,7 @@ export default class ExpenseForm extends React.Component {
             placeholder="Amount"
             value={this.state.amount}
             onChange={this.onAmountChange}
+            id="txtAmount"
             />
           <SingleDatePicker
             date={this.state.createdAt}
@@ -84,6 +84,7 @@ export default class ExpenseForm extends React.Component {
             onFocusChange={this.onFocusChanged}
             numberOfMonths={1}
             isOutsideRange={(day) => false}
+            id="dpCreatedAt"
           />
           <textarea
             placeholder="Add a note for your expense (optional)"
