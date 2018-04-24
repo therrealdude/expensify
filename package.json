@@ -2,14 +2,13 @@
   "name": "expensify-app",
   "engines": {
     "node": "9.5.0",
-    "yarn": "1.5.1" 
+    "yarn": "1.5.1"
   },
   "version": "1.0.0",
   "main": "index.js",
   "author": "Daniel Anderson",
   "license": "MIT",
   "scripts": {
-    "serve": "live-server public",
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
@@ -26,11 +25,6 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.11",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.3.3",
-    "jest": "^22.4.3",
-    "live-server": "^1.2.0",
     "moment": "^2.22.0",
     "node-sass": "^4.8.3",
     "normalize.css": "^8.0.0",
@@ -44,14 +38,20 @@
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-test-renderer": "^16.3.1",
     "redux": "^3.7.2",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
     "uuid": "^3.2.1",
     "validator": "^9.4.1",
     "webpack": "^4.3.0",
-    "webpack-cli": "^2.0.13",
+    "webpack-cli": "^2.0.13"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "jest": "^22.4.3",
+    "react-test-renderer": "^16.3.1",
     "webpack-dev-server": "^3.1.1"
   }
 }
