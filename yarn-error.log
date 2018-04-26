@@ -28,7 +28,7 @@ npm manifest:
       "build:dev": "webpack",
       "build:prod": "webpack -p --env production",
       "dev-server": "webpack-dev-server",
-      "test": "jest --config=jest.config.json",
+      "test": "cross-env NODE_ENV=test jest --config=jest.config.json",
       "start": "node server/server.js",
       "heroku-postbuild": "yarn run build:prod"
     },
@@ -67,6 +67,8 @@ npm manifest:
       "webpack-cli": "^2.0.13"
     },
     "devDependencies": {
+      "cross-env": "^5.1.4",
+      "dotenv": "^5.0.1",
       "enzyme": "^3.3.0",
       "enzyme-adapter-react-16": "^1.1.1",
       "enzyme-to-json": "^3.3.3",
@@ -2264,6 +2266,13 @@ Lockfile:
       ripemd160 "^2.0.0"
       safe-buffer "^5.0.1"
       sha.js "^2.4.8"
+  
+  cross-env@^5.1.4:
+    version "5.1.4"
+    resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.1.4.tgz#f61c14291f7cc653bb86457002ea80a04699d022"
+    dependencies:
+      cross-spawn "^5.1.0"
+      is-windows "^1.0.0"
   
   cross-spawn@^3.0.0:
     version "3.0.1"
@@ -4524,7 +4533,7 @@ Lockfile:
     version "0.2.1"
     resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
   
-  is-windows@^1.0.1, is-windows@^1.0.2:
+  is-windows@^1.0.0, is-windows@^1.0.1, is-windows@^1.0.2:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
   
@@ -9689,7 +9698,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: C:\windows\system32\cmd.exe
-  Arguments: /d /s /c jest --config=jest.config.json --watch
+  Arguments: /d /s /c cross-env NODE_ENV=test jest --config=jest.config.json --watch
   Directory: C:\Users\danderson\Documents\funprojects\react-class-project\expensify
   Output:
   
