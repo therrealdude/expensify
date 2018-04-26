@@ -43,7 +43,7 @@ module.exports = (env) => {
         'process.env.FIREBASE_STORAGE_BUCKET': JSON.stringify(process.env.FIREBASE_STORAGE_BUCKET),
         'process.env.FIREBASE_MESSENGING_SENDER_ID': JSON.stringify(process.env.FIREBASE_MESSENGING_SENDER_ID),
       })
-    ]
+    ],
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
