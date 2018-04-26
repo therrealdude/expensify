@@ -4,8 +4,8 @@ import ExpenseForm from './ExpenseForm';
 import {editExpense, removeExpense} from '../actions/expenses';
 
 export class EditExpensePage extends React.Component {
-  onSubmit = (id, expense) => {
-    this.props.editExpense(id, expense);
+  onSubmit = (expense) => {
+    this.props.editExpense(expense.id, expense);
     this.props.history.push('/');
   };
   onRemoveExpense = (id) => {
@@ -25,7 +25,9 @@ export class EditExpensePage extends React.Component {
 }
 
 const mapDispathToProps = (dispatch) => ({
-    editExpense: (id, expense) =>  dispatch(editExpense(id, expense)),
+    editExpense: (id, expense) =>  {
+      dispatch(editExpense(id, expense))
+    },
     removeExpense: (id) => dispatch(removeExpense({ id }))
   });
 
