@@ -29,11 +29,11 @@ export const startSetExpenses = () => {
       const expenses = [];
       snapshot.forEach((childSnapshot) => {
       expenses.push({
-       id: childSnapshot.key,
-       ...childSnapshot.val()
+        id: childSnapshot.key,
+        ...childSnapshot.val()
       });
-      dispatch(setExpenses(expenses));
      });
+     dispatch(setExpenses(expenses));
    });
  }
 };
@@ -52,6 +52,14 @@ export const startAddExpense = (expenseData = {}) => {
         id: ref.key,
         ...expense
       }));
+    });
+  };
+};
+
+export const startRemoveExpense = (id) => {
+  return (dispatch) => {
+    return database.ref(`expenses/${id}`).remove().then((ref) => {
+      dispatch(removeExpense({ id }));
     });
   };
 };
